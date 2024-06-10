@@ -27,11 +27,11 @@ services:
     depends_on:
       - mysql_osticket
     expose:
-      - 80
+      - 8088
     environment:
       - VIRTUAL_HOST=${DOMAIN}
       - LETSENCRYPT_HOST=${DOMAIN}
-      - APPHOST=http://localhost:80
+      - APPHOST=http://localhost:8088
       - APPHTTPS=false
     volumes:
       - ./volumes/attachments:/var/www/html/attachments:rw
