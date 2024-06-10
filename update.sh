@@ -19,7 +19,7 @@ fi
 # check is upgrade is needed
 if [ $CURRENT_VERSION != $AVAILABLE_VERSION ]; then
   echo "A new version $AVAILABLE_VERSION is available. Downloading now"
-  wget https://github.com/osTicket/osTicket/releases/download/$AVAILABLE_VERSION/osTicket-$AVAILABLE_VERSION.zip
+  curl -L -O https://github.com/osTicket/osTicket/releases/download/$AVAILABLE_VERSION/osTicket-$AVAILABLE_VERSION.zip
   mv -f osTicket-$AVAILABLE_VERSION.zip osTicket-latest.zip
   rm -r build
   mkdir build
