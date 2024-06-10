@@ -27,12 +27,13 @@ if [ $CURRENT_VERSION != $AVAILABLE_VERSION ]; then
   rm osTicket-latest.zip
   mv build/upload/* build
   rm -r build/upload
+  # If starting a new osTicket temporarily comment the rm -r build/setup line
   rm -r build/setup
   cp crontab build
   cp error.ini build
   cp ost-config.php build/include
-  # Updating files successful (there is no checking done yet)? 
-  # Write back all variables. After this the script will assume the current version isupdated to the latest.
+  # Updating files successfully (there is no checking done yet)? 
+  # Write back all variables. After this the script will assume the current version is updated to the latest.
   echo "Version: $AVAILABLE_VERSION" > info.txt
 else
   echo "All up-to-date!"
