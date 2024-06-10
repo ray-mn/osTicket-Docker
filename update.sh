@@ -31,6 +31,7 @@ if [ $CURRENT_VERSION != $AVAILABLE_VERSION ]; then
   rm -r build/setup
   cp crontab build
   cp error.ini build
+  # If starting a new osTicket temporarily comment the cp ost-config.php build/include line
   cp ost-config.php build/include
   # Updating files successfully (there is no checking done yet)? 
   # Write back all variables. After this the script will assume the current version is updated to the latest.
